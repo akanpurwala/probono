@@ -26,13 +26,13 @@
       <strong>Priority: </strong> <%= @mr.priority %> <br>
       <strong>Description: </strong> <br>
       <div class="well well-sm"><%= @mr.description %></div>
-      <span class="badge"><%= @mr.maintenance_comments.count %>&nbsp; Comments</span>
+      <span class="badge js-comments-count"><%= @comments.count %>&nbsp; Comments</span>
     </div>
   </div>
   <h4>New Comment</h4>
-  <%= render partial: 'comments/form', locals: {mr: @mr, comment: @comment} %>
+  <%= render partial: 'maintenance_comments/form', locals: {mr: @mr, comment: @comment} %>
   <br>
-  <div class="comments">
-    <%= render partial: 'comments/comment', collection: @comments %>
+  <div class="js-comments">
+    <%= render partial: 'maintenance_comments/maintenance_comment', collection: @comments %>
   </div>
 </div>
